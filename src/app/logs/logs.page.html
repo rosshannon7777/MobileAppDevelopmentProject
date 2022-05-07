@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title><center>Wellness Entry</center></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content><center>
+  <ion-button (click)="homePage()">Main menu</ion-button>
+  <ion-button (click)="saveStatus()">Save</ion-button>
+  <ion-button (click)="nextPage()">Next page</ion-button>
+  </center><ion-content>
+    
+<ion-card>
+<ion-title>My sleep last night was: {{wellnessSleep}}</ion-title>
+<ion-title>My energy level today is: {{wellnessEnergy}}</ion-title>
+<ion-title>My body today is: {{wellnessBody}}</ion-title>
+<ion-title>My mental health is: {{wellnessMental}}</ion-title>
+</ion-card>
+
+<ion-list>
+  <ion-grid>
+  <ion-radio-group expand="block" [(ngModel)]="wellnessSleep">
+    <ion-list-header>
+      <ion-label>
+        How well did you sleep last night
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item color="success">
+      <ion-label>Good: 6-7 Hours Sleep</ion-label>
+      <ion-radio value="Good"></ion-radio>
+    </ion-item>
+
+    <ion-item color="secondary">
+      <ion-label >Ok: 5-6 Hours Sleep</ion-label>
+      <ion-radio value="Ok" ></ion-radio>
+    </ion-item>
+
+    <ion-item color="danger">
+      <ion-label>Bad: 4-5 Hours Sleep</ion-label>
+      <ion-radio value="Bad"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-grid>
+</ion-list>
+
+<ion-list>
+  <ion-radio-group [(ngModel)]="wellnessEnergy">
+    <ion-list-header>
+      <ion-label>
+        How is your energy level today (0-10)
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item color="success">
+      <ion-label>Good: 10</ion-label>
+      <ion-radio value="Good"></ion-radio>
+    </ion-item>
+
+    <ion-item color="secondary">
+      <ion-label>Ok: 7</ion-label>
+      <ion-radio value="Ok"></ion-radio>
+    </ion-item>
+
+    <ion-item color="danger">
+      <ion-label>Bad: 4</ion-label>
+      <ion-radio value="Bad"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+
+<ion-list>
+  <ion-radio-group [(ngModel)]="wellnessBody">
+    <ion-list-header>
+      <ion-label>
+        How is your body feeling today (0-10)
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item color="success">
+      <ion-label>Good: 10</ion-label>
+      <ion-radio value="Good"></ion-radio>
+    </ion-item>
+
+    <ion-item color="secondary">
+      <ion-label>Ok: 7</ion-label>
+      <ion-radio value="Ok"></ion-radio>
+    </ion-item>
+
+    <ion-item color="danger">
+      <ion-label>Bad: 4</ion-label>
+      <ion-radio value="Bad"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+
+<ion-list>
+  <ion-radio-group [(ngModel)]="wellnessMental">
+    <ion-list-header>
+      <ion-label>
+        How is your mental health today (0-10)
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item color="success">
+      <ion-label>Good: 10</ion-label>
+      <ion-radio value="Good"></ion-radio>
+    </ion-item>
+
+    <ion-item color="secondary">
+      <ion-label>Ok: 7</ion-label>
+      <ion-radio value="Ok"></ion-radio>
+    </ion-item>
+
+    <ion-item color="danger">
+      <ion-label>Bad: 4</ion-label>
+      <ion-radio value="Bad"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+<ion-card></ion-card>
+<ion-card></ion-card>
+<ion-card></ion-card>
+<ion-card></ion-card>
+</ion-content>

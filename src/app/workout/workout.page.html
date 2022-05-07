@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title><center>Workouts</center></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content><center>
+  <ion-button (click)="homePage()">Main menu</ion-button>
+  <ion-button (click)="saveStatus()">Save</ion-button>
+  <ion-button (click)="aboutus()">About Us</ion-button>
+  </center><ion-content>
+  <ion-card >
+    <ion-title>My upperbody exercise today is: {{upperBody}}</ion-title>
+    <ion-title>My lowerbody exercise today is: {{lowerBody}}</ion-title>
+    <ion-title>My cardio today is is: {{cardio}}</ion-title>
+    <ion-title>My recovery today is: {{recovery}}</ion-title>
+  </ion-card>
+    
+    <ion-list>
+      <ion-radio-group  [(ngModel)]="upperBody">
+        <ion-list-header>
+          <ion-label expand="block">
+            Upper Body Session
+          </ion-label>
+        </ion-list-header>
+    
+        <ion-item color="warning">
+          <ion-label>Bench Press</ion-label>
+          <ion-radio value="Bench Press"></ion-radio>
+        </ion-item>
+    
+        <ion-item color="success">
+          <ion-label >Barbell Row</ion-label>
+          <ion-radio value="Barbell Row" ></ion-radio>
+        </ion-item>
+    
+        <ion-item color="tertiary">
+          <ion-label>Over Head Press</ion-label>
+          <ion-radio value="Over Head Press"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    
+    <ion-list>
+      <ion-radio-group [(ngModel)]="lowerBody">
+        <ion-list-header>
+          <ion-label>
+            Lower Body Session
+          </ion-label>
+        </ion-list-header>
+    
+        <ion-item color="warning">
+          <ion-label>Deadlift</ion-label>
+          <ion-radio value="Deadlift"></ion-radio>
+        </ion-item>
+    
+        <ion-item color="success">
+          <ion-label>Weighted Lunges</ion-label>
+          <ion-radio value="Weighted Lunges"></ion-radio>
+        </ion-item>
+    
+        <ion-item color="tertiary">
+          <ion-label>Squat</ion-label>
+          <ion-radio value="Squat"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    
+    <ion-list>
+      <ion-radio-group [(ngModel)]="cardio">
+        <ion-list-header>
+          <ion-label>
+            Cardio Session
+          </ion-label>
+        </ion-list-header>
+    
+        <ion-item color="warning">
+          <ion-label>Spin Bike Class</ion-label>
+          <ion-radio value="Spin Bike Class"></ion-radio>
+        </ion-item>
+    
+        <ion-item color="success">
+          <ion-label>10 KM Run</ion-label>
+          <ion-radio value="10 KM Run"></ion-radio>
+        </ion-item>
+    
+        <ion-item color="tertiary">
+          <ion-label>Hill Sprints</ion-label>
+          <ion-radio value="Hill Sprints"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    
+    <ion-list>
+      <ion-radio-group [(ngModel)]="recovery">
+        <ion-list-header>
+          <ion-label>
+            Recovery Session
+          </ion-label>
+        </ion-list-header>
+    
+        <ion-item color="warning">
+          <ion-label>Swim in the Sea</ion-label>
+          <ion-radio value="Swim in the Sea"></ion-radio>
+        </ion-item>
+    
+        <ion-item color="success">
+          <ion-label>Sauna</ion-label>
+          <ion-radio value="Sauna"></ion-radio>
+        </ion-item>
+    
+        <ion-item color="tertiary">
+          <ion-label>Cryo Chamber</ion-label>
+          <ion-radio value="Cryo Chamber"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-card></ion-card>
+    <ion-card></ion-card>
+    <ion-card></ion-card>
+    <ion-card></ion-card>
+    </ion-content>
+</ion-content>

@@ -1,0 +1,103 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar color="warning">
+    <ion-title>  
+       <center>Welcome to Momentum  Wellness</center>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="group"><center>
+  <ion-header  collapse="condense">
+    <ion-toolbar>
+      
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-card>
+    <ion-button (click)="login()">Log your daily wellness</ion-button>
+    <p>Todays Wellness</p>
+    <p>My Sleep last night was: {{wellnessSleep}}</p>
+    <p>My Energy level today is: {{wellnessEnergy}}</p>
+    <p>My Body today is: {{wellnessBody}}</p>
+    <p>My Mental Health today is: {{wellnessMental}}</p>
+  </ion-card></ion-col>
+
+    <ion-col><ion-card>
+    <ion-button (click)="workout()">Log your daily workout</ion-button>
+    <p>Todays Session</p>
+    <p>My Upper Body session today is: {{upperBody}}</p>
+    <p>My Lower Body session today is: {{lowerBody}}</p>
+    <p>My Cardio today is: {{cardio}}</p>
+    <p>My Recovery today is: {{recovery}}</p>
+    </ion-card></ion-col>
+  </ion-row>
+  </ion-grid>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Momentum Wellness</ion-card-title>             
+      </ion-card-header>
+    
+      <ion-card-content>
+        We are a passionate group of health and wellness professionals providing our clients with quality care.
+      </ion-card-content>
+      <ion-button (click)="aboutus()">About Us</ion-button>
+      <h3>Health</h3>
+      <ion-button click="Health()">Healthy</ion-button>
+    </ion-card>
+    
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>Momentum Wellness Centre Galway</ion-label>
+        <ion-button fill="outline" target=”_blank” href="https://www.google.com/maps/dir//wellness+centre+galway/ @53.2890376,-9.
+        0044204,12.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x485b96c11d144e9d:0x107fcc57a009bc41!2m2!1d-9.0365408!2d53.2833591" slot="start">View</ion-button>
+      </ion-item>
+    </ion-card>
+    
+    <ion-card> 
+      <ion-card-content >
+        Down below is a number of the websites to help you feel better about yourself and get yourself to peak fitness.
+      </ion-card-content>
+      <ion-item target=”_blank” href="https://www.womenshealthmag.com/uk/fitness/strength-training/a706202/strength-training-for-beginners/">
+        <ion-icon name="barbell" slot="start"></ion-icon>
+        <ion-label>Workout routine website</ion-label>
+      </ion-item>
+    
+      <ion-item target=”_blank” href="https://www.hollandandbarrett.ie/shop/product/optimum-nutrition-gold
+      -standard-100-whey-powder-strawberry-60076738?skuid=076738&utm_medium=cpc&utm_source=google&utm_campaign
+      =shopping&&&utm_medium=cpc&utm_source=google&gclid=Cj0KCQjwyMiTBhDKARIsAAJ-9VtQ81Arl
+      sukJ7cXX3torqzFiEEqTTzAy57K4AlHA-8RnuLWen4YXKMaAu7BEALw_wcB&gclsrc=aw.ds">
+        <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+        <ion-label>Workout protein</ion-label>
+      </ion-item>
+    
+      <ion-item target=”_blank” href="https://kearneycycles.com/">
+        <ion-icon name="bicycle" slot="start"></ion-icon>
+        <ion-label >Cardio workouts</ion-label>
+      </ion-item>
+    
+      <ion-item target=”_blank” href="https://penaltyfile.com/types-of-sports/">
+        <ion-icon name="tennisball" slot="start"></ion-icon>
+        <ion-label>Variety of sports activites </ion-label>
+      </ion-item>
+    </ion-card></center>
+
+    <ion-button expand="block" size="large" (click)="sucess()">The Secret to Sucess</ion-button>  
+        <h2  [hidden]="hidden"><ul style="list-style-type:disc;">
+          <li>
+            Exercise Daily. Exercise daily for at least an hour
+          </li>
+          <li>
+            Eat the Right Foods and Portion Each Meal. No matter how bad your stomach is telling you to go for candy over healthy food, try to stay away from sweets
+          </li>
+          <li>
+            Keep Track of Calories and Food Intake Per Day
+          </li>
+           <li>
+            Be Sure to Get Sleep
+           </li>
+         </ul>
+        </h2>  
+</ion-content>
