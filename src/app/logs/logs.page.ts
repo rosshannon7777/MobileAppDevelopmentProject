@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
+import { alertController } from '@ionic/core';
 
 @Component({
   selector: 'app-logs',
@@ -9,17 +10,30 @@ import { NavController } from '@ionic/angular';
 })
 export class LogsPage implements OnInit {
 
+  // variables
   wellnessSleep:string = "";
   wellnessEnergy:string = "";
   wellnessBody:string = "";
   wellnessMental:string = "";
   
-  constructor(private navCtrl:NavController,private storage:Storage) { }
+  constructor(private navCtrl:NavController,
+    private storage:Storage,
+    private alertController: AlertController) { }
  
   ngOnInit() {
   }
 
-   saveStatus(){
+  // saving the buttons clicked 
+  // alert method to tell you when data is saved
+  // MERITS ATTENTION
+ async  saveStatus(){
+  const alert = await  this.alertController.create({
+    header: 'ALERT!',
+    subHeader: 'Your wellness data has been saved to the main menu',
+    buttons:['Ok']
+  })
+  await alert.present();
+     
     this.storage.create()
     .then(()=>{
       this.storage.set("sleep", this.wellnessSleep)
@@ -38,6 +52,7 @@ export class LogsPage implements OnInit {
     .catch();
   }
 
+  // navigation buttons
   nextPage(){
     this.navCtrl.navigateForward('/workout');
     }

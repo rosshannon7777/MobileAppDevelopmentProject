@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
-import { Logs } from 'selenium-webdriver';
-import { NgForm } from '@angular/forms';
 import {WorkoutService} from '../Services/workout.service';
-import { Health } from '@awesome-cordova-plugins/health';
-
+import { Flashlight } from '@ionic-native/flashlight/ngx';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +11,11 @@ import { Health } from '@awesome-cordova-plugins/health';
 })
 export class HomePage implements OnInit {
 
+  // variables
   wellnessSleep:string = "";
   wellnessEnergy:string = "";
   wellnessBody:string = "";
   wellnessMental:string = "";
-
   upperBody:String = "";
   lowerBody:String = "";
   cardio:String = "";
@@ -27,10 +24,12 @@ export class HomePage implements OnInit {
   // data binding
   hidden = true;
 
+  // array for json
   workouts:any = [];
 
-  constructor(private navCtrl:NavController, private storage:Storage, private workoutService:WorkoutService,private health: Health) {}
+  constructor(private navCtrl:NavController, private storage:Storage, private workoutService:WorkoutService,private flashlight: Flashlight) {}
 
+  // method for json blob
   ngOnInIt(){
     this.workoutService.getWorkoutData().subscribe( 
       (data)=>{
@@ -39,22 +38,12 @@ export class HomePage implements OnInit {
     } );
   }
 
-    Health(){
-    this.health.isAvailable()
-  .then((available:boolean) => {
-    console.log(available);
-    this.health.requestAuthorization([
-      'distance', 'nutrition',  //read and write permissions
-      {
-        read: ['steps'],       //read only permission
-        write: ['height', 'weight']  //write only permission
-      }
-    ])
-    .then(res => console.log(res))
-    .catch(e => console.log(e));
-  })
-  .catch(e => console.log(e));}
+  // method for flashlight to be used
+  Flashlight(){
+    this.flashlight.toggle();
+  }
 
+  // making the data transferable to another page
   ionViewDidEnter(){
     this.storage.create()
       .then(()=>{
@@ -102,7 +91,16 @@ export class HomePage implements OnInit {
       .catch();
     }
 
-   
+    // data binding
+    sucess(){
+      if(this.hidden == true){
+        this.hidden = false;
+      } else {
+        this.hidden = true;
+      }
+    }
+
+   // methods of navigation to and from certain pages
    login(){
     this.navCtrl.navigateForward('/logs');
     }
@@ -115,15 +113,6 @@ export class HomePage implements OnInit {
       this.navCtrl.navigateForward('/aboutus');
     }
 
-    // data binding
-    sucess(){
-      if(this.hidden == true){
-        this.hidden = false;
-      } else {
-        this.hidden = true;
-      }
-    }
-    
   }
 
   

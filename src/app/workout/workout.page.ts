@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
-import {HttpClientModule} from '@angular/common/http';
-
+import { alertController } from '@ionic/core';
 
 @Component({
   selector: 'app-workout',
@@ -11,21 +10,30 @@ import {HttpClientModule} from '@angular/common/http';
 })
 export class WorkoutPage {
 
-  
-
+  //variables
   upperBody:String = "";
   lowerBody:String = "";
   cardio:String = "";
   recovery:String = "";
 
-  constructor(private navCtrl:NavController,private storage:Storage) { }
+  constructor(private navCtrl:NavController,
+    private storage:Storage,
+    private alertController: AlertController) { }
 
    ngOnInIt(){
     
   }
   
+  // saving data that was clicked to the console
+  // MERITS ATTENTION
+  async saveStatus(){
+  const alert = await  this.alertController.create({
+      header: 'ALERT!',
+      subHeader: 'Your workout data has been saved to the main menu',
+      buttons:['OK']
+    })
+    await alert.present();
 
-  saveStatus(){
     this.storage.create()
     .then(()=>{
       this.storage.set("ubody", this.upperBody)
@@ -44,6 +52,7 @@ export class WorkoutPage {
     .catch();
   }
 
+  // navagtion buttons
   nextPage(){
     this.navCtrl.navigateForward('/aboutus');
     }

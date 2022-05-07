@@ -10,10 +10,10 @@ export class AboutusPage implements OnInit {
 
   constructor(private navCtrl:NavController) {}
   
-
   ngOnInit() {
   }
   
+  // navagtion buttons
   homePage(){
     this.navCtrl.navigateRoot('/home');
   }

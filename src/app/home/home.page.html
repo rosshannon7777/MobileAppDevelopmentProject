@@ -3,9 +3,9 @@
     <ion-title>  
        <center>Welcome to Momentum  Wellness</center>
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content [fullscreen]="group"><center>
   <ion-header  collapse="condense">
@@ -41,10 +41,19 @@
     
       <ion-card-content>
         We are a passionate group of health and wellness professionals providing our clients with quality care.
-      </ion-card-content>
+      </ion-card-content><ion-item >
+          <ion-label>Users</ion-label>
+          <ion-badge slot="start">6k</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>Traffic (Daily)</ion-label>
+          <ion-badge color="secondary" slot="start">35k</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>Rating</ion-label>
+          <ion-badge color="tertiary" slot="start">4 Stars</ion-badge>
+        </ion-item>
       <ion-button (click)="aboutus()">About Us</ion-button>
-      <h3>Health</h3>
-      <ion-button click="Health()">Healthy</ion-button>
     </ion-card>
     
     <ion-card>
@@ -55,7 +64,7 @@
         0044204,12.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x485b96c11d144e9d:0x107fcc57a009bc41!2m2!1d-9.0365408!2d53.2833591" slot="start">View</ion-button>
       </ion-item>
     </ion-card>
-    
+  
     <ion-card> 
       <ion-card-content >
         Down below is a number of the websites to help you feel better about yourself and get yourself to peak fitness.
@@ -100,4 +109,6 @@
            </li>
          </ul>
         </h2>  
+        
+        
 </ion-content>

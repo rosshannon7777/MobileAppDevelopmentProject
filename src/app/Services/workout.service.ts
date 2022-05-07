@@ -10,6 +10,7 @@ export class WorkoutService {
 
   constructor(private httpClient:HttpClient) { }
 
+  // jsonblob method to retrive data from a URL
   getWorkoutData():Observable<any>{
     return this.httpClient.get('https://jsonblob.com/api/jsonblob/972468963191832576');
    }
